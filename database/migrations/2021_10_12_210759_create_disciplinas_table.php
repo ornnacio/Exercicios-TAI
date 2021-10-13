@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTurmaCategoriasTable extends Migration
+class CreateDisciplinasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTurmaCategoriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('turma_categoria', function (Blueprint $table) {
+        Schema::create('disciplinas', function (Blueprint $table) {
             $table->id();
-            $table->string("nome", 80);
-            $table->string("sigla", 20);
+            $table->string('nome', 100);
+            $table->integer('carga_horaria');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTurmaCategoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turma_categoria');
+        Schema::dropIfExists('disciplinas');
     }
 }

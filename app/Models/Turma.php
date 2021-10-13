@@ -11,7 +11,7 @@ class Turma extends Model
 
     protected $table = 'turma';
 
-    protected $fillable = ["nome", "codigo", "descricao", 'turma_categoria_id', 'nome_arquivo'];
+    protected $fillable = ["nome", "codigo", "descricao", 'turma_categoria_id', 'nome_arquivo', 'curso_id'];
 
 
     public static function rules()
@@ -44,5 +44,13 @@ class Turma extends Model
     public function categorias()
     {
         return $this->belongsTo(TurmaCategoria::class, 'turma_categoria_id', 'id');
+    }
+
+    public function curso(){
+        return $this->belongsTo(Curso::class, 'curso_id', 'id');
+    }
+
+    public function disciplinas(){
+        return $this->belongsToMany(Disciplina::class, 'disciplina_turma', 'turma_id', 'disciplina_id');
     }
 }

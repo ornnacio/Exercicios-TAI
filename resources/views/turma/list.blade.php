@@ -41,6 +41,7 @@
             <th scope="col">Imagem</th>
             <th scope="col">Nome</th>
             <th scope="col">Código</th>
+            <th scope="col">Curso</th>
             <th scope="col">Categoria</th>
             <th scope="col">Ação</th>
             <th scope="col">Ação</th>
@@ -56,6 +57,7 @@
             <td><img src="storage/imagem/{{$nome_arquivo}}" width="100px" /></td>
             <td>{{$item->nome}}</td>
             <td>{{$item->codigo}}</td>
+            <td>{{$item->curso->nome ?? ""}}</td>
             <td>{{$item->categorias->nome ?? "" }}</td>
             <td><a href="{{ action('App\Http\Controllers\TurmaController@edit',$item->id) }}" style='color:orange;'><i
                         class='fas fa-edit'></i></a>

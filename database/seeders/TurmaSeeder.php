@@ -21,6 +21,7 @@ class TurmaSeeder extends Seeder
                 'nome' => $faker->name,
                 'codigo' => $faker->randomNumber($nbDigits = 9, $strict = false),
                 'descricao' => $faker->paragraph($nbSentences = 1, $variableNbSentences = true),
+                'curso_id' => random_int(1, 3),
             ]);
         }
     }
